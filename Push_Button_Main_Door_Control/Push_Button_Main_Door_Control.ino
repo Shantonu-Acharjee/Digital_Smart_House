@@ -17,7 +17,8 @@ void setup() {
 
 void loop() {
   val = analogRead(analogPin);  
-  Serial.println(val);   
+  Serial.println(val);
+    
 
   if(val >= 100){
     MainGateServo.write(DoorOpenPoint);

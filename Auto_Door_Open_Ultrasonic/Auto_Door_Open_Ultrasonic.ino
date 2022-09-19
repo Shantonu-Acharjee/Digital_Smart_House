@@ -33,11 +33,13 @@ distanceA = durationA*0.034/2;
 
 if(distanceA <= 15){
   AutoDoorServo.write(100);
+  digitalWrite(led, HIGH);
   delay(1000);
 }
 
 else{
   AutoDoorServo.write(0);
+  digitalWrite(led, LOW);
   delay(15);
 }
 

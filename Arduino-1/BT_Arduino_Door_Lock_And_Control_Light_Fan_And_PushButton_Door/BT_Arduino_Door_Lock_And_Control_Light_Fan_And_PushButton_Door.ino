@@ -8,12 +8,12 @@ String password = "1234"; // This is the password. You can set any pasword.
 boolean stringComplete = false;   
 char inChar;
 
-int DoorOpenPoint = 100;
-int DoorClosePoint = 0;
+int DoorOpenPoint = 0;
+int DoorClosePoint = 100;
 
 //Light Fan Section
 int led = 13;
-int fan = 12;
+int fan = 11;
 
 
 int analogPin = A0; 
@@ -119,10 +119,10 @@ void serialEvent() {
 // For Light Fan ----------------------------------Start -----------------
 
     if(inChar =='a')
-    digitalWrite(led,HIGH);
+    digitalWrite(led,LOW);
     
     else if(inChar == 'b')
-      digitalWrite(led,LOW);
+      digitalWrite(led,HIGH);
 
 
 
@@ -130,11 +130,11 @@ void serialEvent() {
 // For FAN
 
     else if(inChar == 'c')
-      digitalWrite(fan,HIGH);
+      digitalWrite(fan,LOW);
 
 
     else if(inChar == 'd')
-      digitalWrite(fan,LOW);
+      digitalWrite(fan,HIGH);
 
 
 //Light Fan End -----------------xx------------------------------
@@ -151,7 +151,7 @@ void serialEvent() {
 void openDoor(){
   MainGateServo.write(DoorOpenPoint); 
   delay(2500);
-  MainGateServo.write(0); 
+  MainGateServo.write(DoorClosePoint); 
   delay(15);
     
 }
