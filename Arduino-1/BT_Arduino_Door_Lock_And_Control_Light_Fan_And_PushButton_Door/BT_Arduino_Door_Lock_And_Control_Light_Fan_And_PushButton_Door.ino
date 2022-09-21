@@ -32,7 +32,8 @@ void setup(){
 
   pinMode(led, OUTPUT);
   pinMode(fan, OUTPUT);
-
+  digitalWrite(led, HIGH);
+  digitalWrite(fan, HIGH);
   pinMode(analogPin, INPUT); 
   
 }
